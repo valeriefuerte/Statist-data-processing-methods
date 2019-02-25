@@ -26,8 +26,9 @@ def main():
     variationSequence = sorted(variation)
     print('Вариационный ряд: ',variationSequence)
 
-
-
+    with open('variation.csv', 'w') as variationFile:
+            for i in range(len(variationSequence)):
+                variationFile.write(str(variationSequence[i][0]) + ';' + str(variationSequence[i][1]) + '\n')
 
 if __name__ == "__main__":
     main()
