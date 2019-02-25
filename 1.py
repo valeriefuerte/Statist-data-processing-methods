@@ -34,10 +34,16 @@ def main():
     n = 0
     for i in range(len(variationSequence)):
         n = variationSequence[i][1] + n
-    print('Объем выборки', n)
+    print('Объем выборки:', n)
 
     K = int(1 + 3.322 * math.log(n, 10))
-    print('Количество интервалов', K)
+    print('Количество интервалов:', K)
+
+    max = len(variationSequence)
+    x_min = variationSequence[0][0]
+    x_max = variationSequence[max-1][0]
+    h = ( x_max - x_min ) / n
+    print('Шаг интервала:', h)
 
 
 if __name__ == "__main__":
